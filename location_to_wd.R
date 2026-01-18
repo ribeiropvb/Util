@@ -1,3 +1,4 @@
-# Created by: https://github.com/hbrpaulo
-path_one <- stringr::str_split(rstudioapi::getActiveDocumentContext()$path, '/', simplify = TRUE)
-setwd(paste0(path_one[-length(path_one)], collapse = '/'))
+if(interactive()){
+  path <- dirname(rstudioapi::getActiveDocumentContext()$path)
+  setwd(path)
+}
